@@ -78,7 +78,7 @@ const beeBoardFlightPath = {
         { x: -800, y: 510 },
         { x: -850, y: 510 },
         { x: -1000, y: 480 },
-        { x: -1600, y: 430 },
+        { x: -1800, y: 430 },
     ],
 };
 // bee-ski flight path
