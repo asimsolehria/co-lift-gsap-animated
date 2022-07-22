@@ -29,7 +29,7 @@ const beeflightPath2 = {
 const beeflightPath3 = {
     curviness: 1.25,
     autoRotate: true,
-    values: [{ x: window.innerWidth + 150, y: 20 }],
+    values: [{ x: window.innerWidth + 500, y: 20 }],
 };
 
 // bee-stand flight path
@@ -38,7 +38,19 @@ const beeStandFlightPath = {
     autoRotate: false,
     values: [{ x: -300, y: 0 }],
 };
-// bee-stand flight path
+// bee-cow flight path
+const beeCowFlightPath = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 500, y: 0 }],
+};
+// bee-cow flight path back
+const beeCowBack = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: -500, y: 0 }],
+};
+// bee-cycle flight path
 const beeCycleFlightPath = {
     curviness: 1.25,
     autoRotate: false,
@@ -82,9 +94,6 @@ const beeSkiFlightPath = {
     ],
 };
 
-
-
-
 // Mountains right path
 const mountainsRightPath = {
     curviness: 1.25,
@@ -99,13 +108,69 @@ const mountainsLeftPath = {
     values: [{ x: -1000, y: 0 }],
 };
 
+// Mountain right return
+const mountainsRightReturn = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: 0 }],
+};
+
+// Mountains left return
+const mountainsLeftReturn = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: 0 }],
+};
+
 // Foreground comes upward
 const foregroundUpward = {
     curviness: 1.25,
     autoRotate: false,
+    values: [{ x: 0, y: -500 }],
+};
+// Foreground goes back
+const foregroundDown = {
+    curviness: 1.25,
+    autoRotate: false,
     values: [{ x: 0, y: 500 }],
 };
+// Bee-climb hangs up
+const beeClimbPath = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: 1000 }],
+};
+// Bee-climb returns up
+const beeReturnPath = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: -1000 }],
+};
 
+// Tree Ground Comes In
+const treeGroundUpward = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: -1000 }],
+};
+// Tree Ground Goes back
+const treeGroundDown = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: 1000 }],
+};
+// Green Ground Comes In
+const greenGroundUpward = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: -1000 }],
+};
+// Green Ground Goes back
+const greenGroundDown = {
+    curviness: 1.25,
+    autoRotate: false,
+    values: [{ x: 0, y: 1000 }],
+};
 
 // Tween satrts here ------> logo flightPath
 const tween = new TimelineLite();
@@ -263,28 +328,28 @@ tween
             bezier: mountainsRightPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     .add(
         TweenLite.to("#mountain3", 7, {
             bezier: mountainsRightPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     .add(
         TweenLite.to("#trees1", 7, {
             bezier: mountainsRightPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     .add(
         TweenLite.to("#trees2", 7, {
             bezier: mountainsLeftPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     // Left movement of left side objects
     .add(
@@ -292,48 +357,443 @@ tween
             bezier: mountainsLeftPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     .add(
         TweenLite.to("#mountainPartial", 7, {
             bezier: mountainsLeftPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
     )
     .add(
         TweenLite.to("#bushes", 7, {
             bezier: mountainsLeftPath,
             ease: Power1.easeInOut,
         }),
-        "right"
+        "open"
+    )
+    .add(
+        TweenLite.to("#ground", 7, {
+            bezier: foregroundUpward,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#logo8", 10, {
+            opacity: 1,
+            visibility: "visible",
+        })
+    )
+    .add(
+        TweenLite.to("#logo8", 10, {
+            opacity: 0,
+        })
+    )
+    .add(
+        TweenLite.to("#logo8", 1, {
+            visibility: "hidden",
+        })
+    )
+    .add(
+        TweenLite.to("#ground", 7, {
+            bezier: foregroundDown,
+            ease: Power1.easeInOut,
+        })
     )
 
+    // Mountains close back
+    .add(
+        TweenLite.to("#mountain1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#mountain3", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#trees1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#trees2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    // Left movement of left side objects
+    .add(
+        TweenLite.to("#mountain2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#mountainPartial", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#bushes", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "close"
+    )
+    .add(
+        TweenLite.to("#bee-climb", 7, {
+            bezier: beeClimbPath,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#logo9", 7, {
+            opacity: 1,
+            visibility: "visible",
+        })
+    )
+    .add(
+        TweenLite.to("#logo9", 7, {
+            opacity: 0,
+        })
+    )
+    .add(
+        TweenLite.to("#bee-climb", 7, {
+            bezier: beeReturnPath,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#mountain1", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#mountain3", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#trees1", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#trees2", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    // Left movement of left side objects
+    .add(
+        TweenLite.to("#mountain2", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#mountainPartial", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#bushes", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openAgain"
+    )
+    .add(
+        TweenLite.to("#tree-ground", 7, {
+            bezier: treeGroundUpward,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#logo10", 7, {
+            visibility: "visible",
+            opacity: 1,
+        })
+    )
+    .add(
+        TweenLite.to("#logo10", 7, {
+            opacity: 0,
+        })
+    )
+    .add(
+        TweenLite.to("#logo10", 7, {
+            visibility: "hidden",
+        })
+    )
+    .add(
+        TweenLite.to("#tree-ground", 7, {
+            bezier: treeGroundDown,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#mountain1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#mountain3", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#trees1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#trees2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    // Left movement of left side objects
+    .add(
+        TweenLite.to("#mountain2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#mountainPartial", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#bushes", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeAgain"
+    )
+    .add(
+        TweenLite.to("#logo11", 7, {
+            visibility: "visible",
+            opacity: 1,
+        })
+    )
+    .add(
+        TweenLite.to("#logo11", 7, {
+            opacity: 0,
+        })
+    )
+    .add(
+        TweenLite.to("#logo10", 7, {
+            visibility: "hidden",
+        })
+    )
+    .add(
+        TweenLite.to("#mountain1", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#mountain3", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#trees1", 7, {
+            bezier: mountainsRightPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#trees2", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    // Left movement of left side objects
+    .add(
+        TweenLite.to("#mountain2", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#mountainPartial", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#bushes", 7, {
+            bezier: mountainsLeftPath,
+            ease: Power1.easeInOut,
+        }),
+        "openThirdTime"
+    )
+    .add(
+        TweenLite.to("#green-ground", 7, {
+            bezier: greenGroundUpward,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#bee-stand", 7, {
+            bezier: beeStandFlightPath,
+            ease: Power1.easeInOut,
+        }),
+        "sync"
+    )
+    .add(
+        TweenLite.to("#bee-cow", 7, {
+            bezier: beeCowFlightPath,
+            ease: Power1.easeInOut,
+        }),
+        "sync"
+    )
+    .add(
+        TweenLite.to("#logo12", 7, {
+            visibility: "visible",
+            opacity:1
+        })
+    )
+    .add(
+        TweenLite.to("#logo12", 7, {
+            opacity:0,
+            
+        })
+    )
+    .add(
+        TweenLite.to("#logo12", 7, {
+            visibility: "hidden",
+            
+        })
+    )
 
+    .add(
+        TweenLite.to("#bee-stand", 7, {
+            bezier: beeStandBackPath,
+            ease: Power1.easeInOut,
+        }),
+        "backSync"
+    )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .add(
+        TweenLite.to("#bee-cow", 7, {
+            bezier: beeCowBack,
+            ease: Power1.easeInOut,
+        }),
+        "backSync"
+    )
+    .add(
+        TweenLite.to("#green-ground", 7, {
+            bezier: greenGroundDown,
+            ease: Power1.easeInOut,
+        })
+    )
+    .add(
+        TweenLite.to("#mountain1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#mountain3", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#trees1", 7, {
+            bezier: mountainsRightReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#trees2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    // Left movement of left side objects
+    .add(
+        TweenLite.to("#mountain2", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#mountainPartial", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#bushes", 7, {
+            bezier: mountainsLeftReturn,
+            ease: Power1.easeInOut,
+        }),
+        "closeLastTime"
+    )
+    .add(
+        TweenLite.to("#logo13", 7, {
+            opacity:1
+            
+        })
+    )
 
 // Scroll Trigger and controller
 const controller = new ScrollMagic.Controller();
 const scene = new ScrollMagic.Scene({
     triggerElement: ".animation",
-    duration: 4000,
+    duration: 10000,
     triggerHook: 0,
 })
     .setTween(tween)
     .setPin(".animation")
-    .addTo(controller); 
+    .addTo(controller);

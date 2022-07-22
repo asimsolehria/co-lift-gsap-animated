@@ -32,7 +32,7 @@ section img{
     object-fit: cover;
     pointer-events: none;
 }
-.text1,.text2,.text3,.text4,.text5,.text6,.text7{
+.text1,.text2,.text3,.text4,.text5,.text6,.text7,.text8,.text9,.text10,.text11,.text12,.text13{
     position: absolute;
     
 }
@@ -41,7 +41,7 @@ section img{
     
 }
 
-.text2,.text3,.text4,.text5,.text6,.text6,.text7{
+.text2,.text3,.text4,.text5,.text6,.text6,.text7,.text11{
     margin-top: -15%;
 
 }
@@ -139,7 +139,98 @@ section img{
     z-index: 7;
     opacity: 0;
 }
+#logo8{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo8 p{
+    line-height: 150%;
+    font-size: 22px;
+}
+#logo9{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo9{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo9 p{
+    line-height: 150%;
+    font-size: 22px;
+}
+#logo10{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo10 h2{
+    color: #20496a;
+    font-size: 1.5vw;
+    /* letter-spacing: 0.43vw; */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: auto;
+    padding-left: 5px;
+}
+#logo11{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo11 p{
+    line-height: 150%;
+    font-size: 22px;
+}
+#logo12{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
+    visibility: hidden;
+}
+#logo12 p{
+    line-height: 150%;
+    font-size: 22px;
+}
+#logo13{
+    position: relative;
+    color: #20496a;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    z-index: 7;
+    opacity: 0;
 
+}
+#logo13 p{
+    line-height: 150%;
+    font-size: 22px;
+}
 #mountain1{
     position: absolute;
     z-index: 8;
@@ -195,8 +286,14 @@ section img{
     width: 156px;
     height: 230px;
     z-index: 8;
-    margin-top: 500px;
+    margin-top: 400px;
     margin-left:100%;
+}
+#bee-cow{
+    width: 250px;
+    height: 187px;
+    margin-top: 450px;
+    margin-left: -30%;
 }
 #bee-cycle{
     position: absolute;
@@ -222,15 +319,34 @@ section img{
     margin-top: 380px;
     margin-left: -50px;
 }
+#bee-climb{
+    width: 180px;
+    z-index: 8;
+    height: 746px;
+    margin-left: 75%;
+    margin-top: -1000px;
+}
 #trees2{
     position: absolute;
-    margin-left: -50px;
+    
     z-index:1;
 }
 #trees1{
     position: absolute;
     z-index:4;
 }
+
+#ground{
+    margin-top: 500px;
+}
+#tree-ground{
+    margin-top: 1000px;
+}
+#green-ground{
+    margin-top: 1000px;
+}
+
+
 .sec{
     position:relative;
     padding: 100px;
