@@ -59,7 +59,7 @@ const beeCycleFlightPath = {
         { x: -700, y: -40 },
         { x: -900, y: -50 },
         { x: -1000, y: -80 },
-        { x: -1600, y: -80 },
+        { x: -1800, y: -80 },
     ],
 };
 // bee-stand flight path
@@ -90,7 +90,7 @@ const beeSkiFlightPath = {
         { x: 800, y: 200 },
 
         { x: 1000, y: 250 },
-        { x: 1500, y: 270 },
+        { x: 1700, y: 270 },
     ],
 };
 
